@@ -1,4 +1,4 @@
-import Proptypes from 'prop-types'
+import Proptypes from 'prop-types';
 
 const ToDo = ({ onCLick, completed, text }) => {
     return (
@@ -9,7 +9,7 @@ const ToDo = ({ onCLick, completed, text }) => {
             {text}
         </li>
     )
-}
+};
 
 ToDo.propTypes = {
     onCLick: Proptypes.func.isRequired,
@@ -17,4 +17,4 @@ ToDo.propTypes = {
     text: Proptypes.string.isRequired
 };
 
-export { ToDo }
+export { ToDo };
