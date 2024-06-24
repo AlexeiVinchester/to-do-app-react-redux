@@ -1,33 +1,22 @@
-let nextId = 0;
+let nextTodoId = 0;
+export const addTodo = (text) => ({
+  type: 'ADD_TODO',
+  id: nextTodoId++,
+  text,
+});
 
-export const ADD_TO_DO = 'ADD_TO_DO';
-export const TOGGLE_TO_DO = 'TOGGLE_TO_DO';
-export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
+export const setVisibilityFilter = (filter) => ({
+  type: 'SET_VISIBILITY_FILTER',
+  filter,
+});
 
-export const addToDo = (text) => {
-    return {
-        type: ADD_TO_DO,
-        id: nextId++,
-        text
-    };
+export const toggleTodo = (id) => ({
+  type: 'TOGGLE_TODO',
+  id,
+});
+
+export const VisibilityFilters = {
+  SHOW_ALL: 'SHOW_ALL',
+  SHOW_COMPLETED: 'SHOW_COMPLETED',
+  SHOW_ACTIVE: 'SHOW_ACTIVE',
 };
-
-export const toggleToDo = (id) => {
-    return {
-        type: TOGGLE_TO_DO,
-        id
-    };
-};
-
-export const setVisibilityFilter = (filter) => {
-    return {
-        type: SET_VISIBILITY_FILTER,
-        filter
-    }
-}
-
-export const visibilityFilters = {
-    SHOW_ALL: 'SHOW_ALL',
-    SHOW_COMPLETED: 'SHOW_COMPLETED',
-    SHOW_ACTIVE: 'SHOW_ACTIVE'
-}

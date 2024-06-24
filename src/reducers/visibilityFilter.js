@@ -1,20 +1,15 @@
-import { 
-    visibilityFilters,
-    SET_VISIBILITY_FILTER
- } from "../actions";
+import { VisibilityFilters } from '../actions';
 
-/* 
-    in visibleFiilter reducer state will be standart filter SHOW_ALL
-    In every case we should return filter-string
-*/
+const visibilityFilter = (
+  state = VisibilityFilters.SHOW_ALL,
+  action
+) => {
+  switch (action.type) {
+    case 'SET_VISIBILITY_FILTER':
+      return action.filter;
+    default:
+      return state;
+  }
+};
 
-const visibleFilter = (state = visibilityFilters.SHOW_ALL, action) => {
-    switch (action.type) {
-        case SET_VISIBILITY_FILTER: 
-            return action.filter
-        default: 
-            return state;
-    }
-}
-
-export {visibleFilter}
+export default visibilityFilter;
