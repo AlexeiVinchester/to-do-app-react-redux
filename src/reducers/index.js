@@ -4,4 +4,4 @@ import { visibleFilter } from "./visibilityFilter";
 
 const reducer = combineReducers(todos, visibleFilter);
 
-export {reducer}
+export { reducer }
